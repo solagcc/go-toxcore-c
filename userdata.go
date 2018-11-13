@@ -10,7 +10,6 @@ import (
 
 /*
 #include <tox/tox.h>
-#include <tox/toxav.h>
 */
 import "C"
 
@@ -76,7 +75,7 @@ func (this *userData) obj2Str(ctox *C.Tox) string {
 	return fmt.Sprintf("%p", ctox)
 }
 
-type userDataAV struct {
+/*type userDataAV struct {
 	ud0 map[*C.ToxAV]*ToxAV
 	ud1 *sync.Map
 	cc  bool // concurrent?
@@ -137,3 +136,4 @@ func (this *userDataAV) del(ctox *C.ToxAV) {
 func (this *userDataAV) obj2Str(ctox *C.ToxAV) string {
 	return fmt.Sprintf("%p", ctox)
 }
+*/

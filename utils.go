@@ -67,15 +67,19 @@ func (this *Tox) WriteSavedata(fname string) error {
 				return err
 			}
 			tfname := tfp.Name()
+			//fmt.Println("go toxcore bind utils ",tfname)
 			if err := tfp.Close(); err != nil {
 				return err
 			}
 			if err := os.Remove(fname); err != nil {
 				return err
 			}
-			if err := os.Rename(filepath.Dir(fname)+"/"+tfname, fname); err != nil {
+			if err := os.Rename(tfname, fname); err != nil {
 				return err
 			}
+			/*if err := os.Rename(filepath.Dir(fname)+"/"+tfname, fname); err != nil {
+				return err
+			}*/
 		}
 	}
 
